@@ -20,19 +20,13 @@ module.exports = {
   /*
   ** Build configuration
   */
+  css: [
+    "tachyons/css/tachyons.min.css",
+    // "tachyons-debug/css/tachyons-debug.min.css",
+    "~/assets/main.css"
+  ],
   build: {
-    /*
-    ** Run ESLint on save
-    */
-    extend (config, { isDev, isClient }) {
-      if (isDev && isClient) {
-        config.module.rules.push({
-          enforce: 'pre',
-          test: /\.(js|vue)$/,
-          loader: 'eslint-loader',
-          exclude: /(node_modules)/
-        })
-      }
-    }
-  }
+    vendor:["axios"]
+  },
+  plugins: ["~/plugins/filters"]
 }
